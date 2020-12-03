@@ -1,0 +1,18 @@
+#pulling official node image
+FROM node:12.16.1-alpine
+
+# set workdir
+WORKDIR "/app"
+
+# copy package.json & yarn.lock
+COPY package.json .
+COPY yarn.lock .
+
+# install dependencies
+RUN yarn
+RUN yarn add nodemon
+
+# copy other files/directories
+COPY . .
+
+CMD ["npm" , "run" ,"dev"]
