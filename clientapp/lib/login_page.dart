@@ -15,11 +15,9 @@ class _LoginPageState extends State<LoginPage> {
         height: double.infinity,
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            stops: [0.3,1],
-            colors: [Color(0xff564E6D),Colors.black]
-          ),
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              List: [Color(0xff564E6D), Colors.black]),
         ),
         child: Column(
           children: [
@@ -36,49 +34,51 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
             Padding(
-              padding:  EdgeInsets.only(top: 50.0),
+              padding: EdgeInsets.only(top: 50.0),
               child: ClipOval(
                 child: Container(
-                 decoration: BoxDecoration(
-                   gradient: RadialGradient(
-                       colors: [Color(0xff564E6D),Color(0x40564E6D)]
-                   ),
-
-                     boxShadow: [
-                 BoxShadow(
-                 color: Color(0XFF272531),
-                  spreadRadius: 10,
-                  blurRadius: 5,
-                   offset: Offset(0, 7),
-                 ),
-                ],
-                 ),
+                  decoration: BoxDecoration(
+                    gradient: RadialGradient(
+                        List: [Color(0xff564E6D), Color(0x40564E6D)]),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Color(0XFF272531),
+                        spreadRadius: 10,
+                        blurRadius: 5,
+                        offset: Offset(0, 7),
+                      ),
+                    ],
+                  ),
                   height: 400.0,
                   width: 350.0,
                   child: Column(
                     children: [
                       Padding(
-                        padding:  EdgeInsets.only(top: 20.0),
-                        child: Text('Welcome !',
-                          style: TextStyle(color: Color(0xffE4FCF9), fontSize: 30,
-                          fontFamily: 'Raleway',
+                        padding: EdgeInsets.only(top: 20.0),
+                        child: Text(
+                          'Welcome !',
+                          style: TextStyle(
+                            color: Color(0xffE4FCF9),
+                            fontSize: 30,
+                            fontFamily: 'Raleway',
                           ),
                           textAlign: TextAlign.center,
                         ),
                       ),
-                       SizedBox(
-                         height: 60.0,
-                       ),
+                      SizedBox(
+                        height: 60.0,
+                      ),
                       Container(
                         height: 50.0,
-                          width: 300,
-
+                        width: 300,
                         child: ListTile(
-                          onTap: (){},
-                          leading: Icon(FontAwesomeIcons.googlePlusG,
+                          onTap: () {},
+                          leading: Icon(
+                            FontAwesomeIcons.googlePlusG,
                             size: 30.0,
-                          color: Colors.white,),
-                          tileColor:Color(0xffD33535) ,
+                            color: Colors.white,
+                          ),
+                          tileColor: Color(0xffD33535),
                           title: Text(
                             'Sign in with Google',
                             style: TextStyle(
@@ -86,22 +86,22 @@ class _LoginPageState extends State<LoginPage> {
                               fontSize: 20,
                               fontFamily: 'Raleway',
                             ),
-
                           ),
                         ),
                       ),
                       Padding(
-                        padding:  EdgeInsets.only(top: 20.0),
+                        padding: EdgeInsets.only(top: 20.0),
                         child: Container(
                           height: 50,
                           width: 300,
                           child: ListTile(
-
-                            onTap: (){},
-                            leading: Icon(FontAwesomeIcons.facebookSquare,
+                            onTap: () {},
+                            leading: Icon(
+                              FontAwesomeIcons.facebookSquare,
                               color: Colors.white,
-                            size: 30.0,),
-                            tileColor:Color(0xff4C4B99) ,
+                              size: 30.0,
+                            ),
+                            tileColor: Color(0xff4C4B99),
                             title: Text(
                               'Sign in with Facebook',
                               style: TextStyle(
@@ -109,7 +109,6 @@ class _LoginPageState extends State<LoginPage> {
                                 fontSize: 20,
                                 fontFamily: 'Raleway',
                               ),
-
                             ),
                           ),
                         ),
@@ -120,11 +119,13 @@ class _LoginPageState extends State<LoginPage> {
                           height: 50,
                           width: 300,
                           child: ListTile(
-                            onTap: (){},
-                            leading: Icon(FontAwesomeIcons.github,
+                            onTap: () {},
+                            leading: Icon(
+                              FontAwesomeIcons.github,
                               color: Colors.white,
-                              size: 30.0,),
-                            tileColor:Colors.black54 ,
+                              size: 30.0,
+                            ),
+                            tileColor: Colors.black54,
                             title: Text(
                               'Sign in with Github',
                               style: TextStyle(
@@ -137,7 +138,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                     ],
-                       ),
+                  ),
                 ),
               ),
             ),
