@@ -17,7 +17,8 @@ class _LoginPageState extends State<LoginPage> {
           gradient: LinearGradient(
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
-              List: [Color(0xff564E6D), Colors.black]),
+              stops: [0.3, 1],
+              colors: [Color(0xff564E6D), Colors.black]),
         ),
         child: Column(
           children: [
@@ -39,7 +40,7 @@ class _LoginPageState extends State<LoginPage> {
                 child: Container(
                   decoration: BoxDecoration(
                     gradient: RadialGradient(
-                        List: [Color(0xff564E6D), Color(0x40564E6D)]),
+                        colors: [Color(0xff564E6D), Color(0x40564E6D)]),
                     boxShadow: [
                       BoxShadow(
                         color: Color(0XFF272531),
