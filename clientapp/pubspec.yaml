@@ -25,17 +25,13 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.0
-  font_awesome_flutter: ^8.11.0
   google_fonts: ^1.1.1
+  font_awesome_flutter: ^8.11.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
 flutter:
-  fonts:
-    - family: Raleway
-      fonts:
-        - asset: fonts/Raleway-Regular.ttf
-        - asset: fonts/Raleway-Medium.ttf
-        - asset: fonts/Raleway-ExtraLight.ttf
+
+
