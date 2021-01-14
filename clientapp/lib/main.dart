@@ -1,5 +1,8 @@
+import 'package:clientapp/event%20details/event_details.dart';
 import 'package:flutter/material.dart';
 import 'login_page.dart';
+
+
 void main() {
   runApp(Page());
 }
