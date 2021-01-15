@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+body{
+    background: linear-gradient(138.45deg, #000000 0%, #0B003E 100%) !important;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+}
+img{
+    position: absolute;
+    width: 25rem; 
+    height: 8.375rem;
+    left: 5.063rem;
+    top: 4.188rem;
+}
+ h1{
+    position: absolute;
+    width:20.75rem;
+    height: 3.625rem;
+    left: 4.5rem;
+    top: 14.5rem;
+    
+   
+    font-weight: 600;
+    font-size: 3rem;
+    line-height: 3.625rem;
+    
+    
+    
+    color: #61B6E0;
+}
+ul{
+    position: absolute;
+width: 18.438rem;
+height: 10rem;
+left: 4.5rem;
+top: 23.7rem;
+padding-bottom: 0.1rem;
+padding-top: 0.1rem;
+font-weight: 600;
+font-size: 1.375rem;
+line-height: 2.5rem;
+color: white;
+
+}
+
+li {
+    list-style-type: none;
+    position: relative;
+    padding-left: 0.938rem;
+  }
+
+
+ i{
+     font-size: 1rem;
+     margin-left: auto;
+ }
+ .loginBtn{
+background-color:#D33534;
+padding:1rem;
+font-size: 1.3rem;
+color:white;
+width: 20rem;
+border-color: #000000;
+
+ }
+  .loginBtn--facebook{
+     background-color: #4C4B99;
+
+ } 
+ .loginBtn--github{
+     background-color: black;
+ }
+ .loginBtn i{
+     font-size: 1.3rem;
+     color:white;
+
+ }
+ .col-md-7{
+    background: linear-gradient(138.45deg, #000000 0%, #0B003E 100%);
+ }
+ .col-md-5{
+    background: linear-gradient(180deg, #00032D 0%, #000000 53.36%, #00032D 100%); padding-left:10rem;
+ }
+ h3{
+    padding-top:5rem;color: white;
+   
+ }
+ h2{
+    padding-top:0.1rem;color: white;
+   
+ }
+ .login{
+     padding-left:7rem;
+     padding-bottom:2rem;
+     font-family: 'Roboto', sans-serif;
+ }
+ p.insta{
+    padding-top:34rem;padding-left:7rem;color:white;font-size: 1rem;
+    line-height: 1.5rem;
+    
+ }
+ @media (max-width: 998px)
+ {
+     html{
+         font-size: 75%;
+     }
+     
+ }
+ @media (max-width: 767px)
+ {
+     html{
+         font-size: 55%;
+     }
+     
+ }
+ @media (max-width: 1089px)
+ {
+     html{
+         font-size: 80%;
+     }
+     
+ }
+ @media (max-width: 1142px)
+ {
+     html{
+         font-size: 82%;
+     }
+     
+ }
