@@ -1,5 +1,7 @@
+import 'package:clientapp/events_page.dart';
 import 'package:flutter/material.dart';
 import 'login_page.dart';
+
 void main() {
   runApp(Page());
 }
@@ -9,8 +11,7 @@ class Page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-
-      home: LoginPage(),
+      home: Eventspage(),
     );
   }
 }

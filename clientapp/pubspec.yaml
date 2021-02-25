@@ -33,9 +33,6 @@ dev_dependencies:
     sdk: flutter
 
 flutter:
-  fonts:
-    - family: Raleway
-      fonts:
-        - asset: fonts/Raleway-Regular.ttf
-        - asset: fonts/Raleway-Medium.ttf
-        - asset: fonts/Raleway-ExtraLight.ttf
+ 
+  assets:
+    - assets/
