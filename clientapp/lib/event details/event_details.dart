@@ -11,7 +11,7 @@ class EventDetails extends StatelessWidget {
       backgroundColor: Colors.black,
       body: SafeArea(
         child: Container(
-                  child: Stack(
+          child: Stack(
             alignment: AlignmentDirectional.topCenter,
             children: [
               Container(
@@ -24,7 +24,7 @@ class EventDetails extends StatelessWidget {
                 ),
               ),
               Container(
-                margin: EdgeInsets.only(top:140),
+                margin: EdgeInsets.only(top: 140),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(60.0),
@@ -84,11 +84,11 @@ class EventDetails extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(height:15),
+                    SizedBox(height: 15),
                     Expanded(
                       child: SingleChildScrollView(
                         child: Container(
-                          padding: EdgeInsets.only(top:37.11),
+                          padding: EdgeInsets.only(top: 37.11),
                           child: Column(
                             children: [
                               Row(
@@ -245,7 +245,7 @@ class EventDetails extends StatelessWidget {
                                   padding: const EdgeInsets.only(top: 21),
                                 ),
                                 endChild: Padding(
-                                  padding: const EdgeInsets.only(top:25),
+                                  padding: const EdgeInsets.only(top: 25),
                                   child: Column(
                                     children: [
                                       Text(
@@ -253,17 +253,17 @@ class EventDetails extends StatelessWidget {
                                         style: GoogleFonts.roboto(
                                           color: Colors.white,
                                           fontWeight: FontWeight.w500,
-                                          fontSize:12,
+                                          fontSize: 12,
                                         ),
                                       ),
                                       Container(
-                                        padding: EdgeInsets.only(top:8),
+                                        padding: EdgeInsets.only(top: 8),
                                         child: Text(
                                           'December 29,2020'.toUpperCase(),
                                           style: GoogleFonts.roboto(
                                             color: Colors.white,
                                             fontWeight: FontWeight.w400,
-                                            fontSize:10,
+                                            fontSize: 10,
                                           ),
                                         ),
                                       ),
@@ -303,19 +303,19 @@ class EventDetails extends StatelessWidget {
                                       style: GoogleFonts.roboto(
                                         color: Colors.white,
                                         fontWeight: FontWeight.w500,
-                                        fontSize:12,
+                                        fontSize: 12,
                                       ),
                                     ),
                                     Container(
                                       width: 93,
-                                      padding: EdgeInsets.only(top:8),
+                                      padding: EdgeInsets.only(top: 8),
                                       child: Text(
                                         'December 29,2020 10 AM'.toUpperCase(),
                                         textAlign: TextAlign.center,
                                         style: GoogleFonts.roboto(
                                           color: Colors.white,
                                           fontWeight: FontWeight.w400,
-                                          fontSize:10,
+                                          fontSize: 10,
                                         ),
                                       ),
                                     ),
@@ -353,20 +353,20 @@ class EventDetails extends StatelessWidget {
                                       style: GoogleFonts.roboto(
                                         color: Colors.white,
                                         fontWeight: FontWeight.w500,
-                                        fontSize:12,
+                                        fontSize: 12,
                                       ),
-                                      
                                     ),
                                     Container(
-                                      padding: EdgeInsets.only(top:8),
+                                      padding: EdgeInsets.only(top: 8),
                                       width: 124,
-                                                                          child: Text(
-                                        'DECEMBER 29 ,2020 - DECEMBER 30 ,2020'.toUpperCase(),
+                                      child: Text(
+                                        'DECEMBER 29 ,2020 - DECEMBER 30 ,2020'
+                                            .toUpperCase(),
                                         textAlign: TextAlign.center,
                                         style: GoogleFonts.roboto(
                                           color: Colors.white,
                                           fontWeight: FontWeight.w400,
-                                          fontSize:10,
+                                          fontSize: 10,
                                         ),
                                       ),
                                     ),
@@ -404,11 +404,11 @@ class EventDetails extends StatelessWidget {
                                       style: GoogleFonts.roboto(
                                         color: Colors.white,
                                         fontWeight: FontWeight.w500,
-                                        fontSize:12,
+                                        fontSize: 12,
                                       ),
                                     ),
                                     Container(
-                                      padding: EdgeInsets.only(top:8),
+                                      padding: EdgeInsets.only(top: 8),
                                       width: 80,
                                       child: Text(
                                         'JANUARY 1 ,2021 10 AM'.toUpperCase(),
@@ -416,7 +416,7 @@ class EventDetails extends StatelessWidget {
                                         style: GoogleFonts.roboto(
                                           color: Colors.white,
                                           fontWeight: FontWeight.w400,
-                                          fontSize:10,
+                                          fontSize: 10,
                                         ),
                                       ),
                                     ),
@@ -457,21 +457,20 @@ class EventDetails extends StatelessWidget {
                                         style: GoogleFonts.roboto(
                                           color: Colors.white,
                                           fontWeight: FontWeight.w500,
-                                          fontSize:12,
+                                          fontSize: 12,
                                         ),
-                                        
                                       ),
                                     ),
                                     Container(
-                                      padding: EdgeInsets.only(top:8),
+                                      padding: EdgeInsets.only(top: 8),
                                       width: 124,
-                                                                          child: Text(
+                                      child: Text(
                                         'JANUARY 4 ,2021'.toUpperCase(),
                                         textAlign: TextAlign.center,
                                         style: GoogleFonts.roboto(
                                           color: Colors.white,
                                           fontWeight: FontWeight.w400,
-                                          fontSize:10,
+                                          fontSize: 10,
                                         ),
                                       ),
                                     ),
@@ -510,11 +509,11 @@ class EventDetails extends StatelessWidget {
                                       style: GoogleFonts.roboto(
                                         color: Colors.white,
                                         fontWeight: FontWeight.w500,
-                                        fontSize:12,
+                                        fontSize: 12,
                                       ),
                                     ),
                                     Container(
-                                      padding: EdgeInsets.only(top:8),
+                                      padding: EdgeInsets.only(top: 8),
                                       width: 80,
                                       child: Text(
                                         'JANUARY 5 ,2021 5 PM'.toUpperCase(),
@@ -522,7 +521,7 @@ class EventDetails extends StatelessWidget {
                                         style: GoogleFonts.roboto(
                                           color: Colors.white,
                                           fontWeight: FontWeight.w400,
-                                          fontSize:10,
+                                          fontSize: 10,
                                         ),
                                       ),
                                     ),
