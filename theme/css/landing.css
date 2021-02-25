@@ -12,6 +12,9 @@ img{
     left: 5.063rem;
     top: 4.188rem;
 }
+.row{
+    height: 100vh;
+}
  h1{
     position: absolute;
     width:20.75rem;
