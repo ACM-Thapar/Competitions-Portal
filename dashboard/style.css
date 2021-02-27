@@ -1,0 +1,821 @@
+.body
+{
+ 
+    font-family: Roboto;
+
+}
+html{
+    scroll-behavior: smooth;
+  }
+
+  .navbar {
+    height: 4rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: .9rem;
+    letter-spacing: .1rem;
+    background: linear-gradient(109.58deg, #000000 0%, #0B003E 98.93%)! important;
+  }
+  
+  .navbar-brand img{
+    height: 3rem;
+    
+  }
+
+  .navbar-nav  .home .circle svg.svg-inline--fa{
+    position: absolute;
+    left: 200px;
+    top: 5px;
+   z-index: 10;
+  }
+ 
+  
+  .navbar-nav li{
+    padding-right: .7rem;
+    
+  }
+  
+  .navbar-dark .navbar-nav .nav-link{
+    color: white;
+    
+  }
+  
+  .search-container
+  {
+    transform: translateX(-50%);
+    position: absolute; 
+    width: 170px;
+    height: 3rem;
+    left: 298px;
+    top: 31px;
+  }
+  input[type=text]
+  {
+    width: 257px;
+    height: 33px;
+    left: 298px;
+    top: 31px;
+      border: rgba(128, 128, 128, 0.479);
+      border-radius: 30px;
+      background-color: rgba(128, 128, 128, 0.479);
+      background-image: url(images/search.png);
+      background-repeat: no-repeat;
+      background-position: 6.3% 50%;
+      padding: 12px 20px 12px 40px;
+      color: #ffffff;
+  }
+  
+  .search-container ::placeholder
+  {
+      line-height: 30px;
+      font-size: 14px;
+      width: 170px;
+      height: 33px;
+      left: 344px;
+      top: 31px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      letter-spacing: 0.15px;
+      color: #767676;
+  }
+
+ 
+
+.navbar-nav .svg-inline--fa
+  {
+   
+      color: white;
+      
+  }
+
+  .offset:before{
+    display: block;
+    content: "";
+    height: 4rem;
+    margin-top: -4rem;
+  }
+.infobox
+{
+  display: block;
+  position: absolute;
+  width: 930px;
+  height: 570px;
+  left: 400px;
+  top: 65px;
+  background:linear-gradient(293.67deg, #261B5B 0%, #0B0040 100%);
+  box-shadow: 0px 4px 200px rgba(0, 0, 0, 0.25);
+  border-radius: 40px;
+}
+.infobox .heading
+{
+  position: absolute;
+  width: 118px;
+  height: 30px;
+  left:30px;
+  top: 30px;
+  font-style: normal;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.15px;
+  color: #ffffff;
+}
+ 
+.first
+{
+  position:absolute;
+  width: 210px;
+  height: 240px;
+  left: 30px;
+  top: 90px;
+  background: #232853;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+.app .circle svg.svg-inline--fa{
+  position: absolute;
+  left: 56px;
+  top:35px;
+  z-index: 1;
+}
+.app img
+{
+  position: absolute;
+  left:73px;
+  top: 84px;
+  z-index: 1;
+}
+.first .heading
+{
+  position: absolute;
+  width: 161px;
+  height: 30px;
+  left: 26px;
+  top: 53px;
+line-height: 30px;
+font-family: Roboto;
+font-style: normal;
+font-size: 20px;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.15px;
+}
+.first .next
+{
+  position: absolute;
+  width: 70px;
+  height: 30px;
+  left: 112px;
+  top: 10px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 30px;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.15px;
+border:#00B807 ;
+background-color:#00B807 ;
+color: white;
+border-radius: 30px;
+}
+.first p
+{
+position: absolute;
+width: 170px;
+height: 106px;
+left: 22px;
+top: 95px;
+font-family: Raleway;
+font-style: initial;
+font-weight: normal;
+font-size: 14px;
+line-height: 15px;
+text-align: center;
+color: white;
+}
+.second
+{
+  position: absolute;
+  width: 210px;
+  height: 240px;
+  left:250px;
+  top: 90px;
+  background: #232853;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+.location .circle svg.svg-inline--fa{
+  position: absolute;
+  left: 145px;
+  top: 35px;
+  z-index: 1;
+}
+.location img
+{
+  position: absolute;
+  left: 301px;
+  top: 89px;
+  z-index: 1;
+}
+.second .heading
+{
+  position: absolute;
+  width: 161px;
+  height: 30px;
+  left: 32px;
+  top: 53px;
+line-height: 30px;
+font-family: Roboto;
+font-style: normal;
+font-size: 20px;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.15px;
+}
+.second .next
+{
+  position: absolute;
+  width: 70px;
+  height: 30px;
+  left: 112px;
+  top: 10px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 30px;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.15px;
+border:purple ;
+background-color:purple ;
+color: white;
+border-radius: 30px;
+}
+.second p
+{
+position: absolute;
+width: 170px;
+height: 106px;
+left: 22px;
+top: 95px;
+font-family: Raleway;
+font-style: initial;
+font-weight: normal;
+font-size: 14px;
+line-height: 15px;
+text-align: center;
+color: white;
+}
+.third
+{
+  position: absolute;
+  width: 210px;
+  height: 240px;
+  left:470px ;
+  top: 90px;
+  background: #232853;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.baseball .circle svg.svg-inline--fa{
+  position: absolute;
+  left: 235px;
+  top: 35px;
+ z-index: 1;
+}
+.baseball img
+{
+  position: absolute;
+  top: 87px;
+  left: 520px;
+  z-index: 1;
+}
+.third .heading
+{
+  position: absolute;
+  width: 161px;
+  height: 30px;
+  left: 38px;
+  top: 53px;
+line-height: 30px;
+font-family: Roboto;
+font-style: normal;
+font-size: 20px;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.15px;
+}
+.third .next
+{
+  position: absolute;
+  width: 70px;
+  height: 30px;
+  left: 112px;
+  top: 10px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 30px;
+  color: white;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.15px;
+border: #BBA500;
+background-color: #BBA500;
+color: white;
+border-radius: 30px;
+
+}
+
+.third p
+{
+position: absolute;
+width: 170px;
+height: 106px;
+left: 22px;
+top: 95px;
+font-family: Raleway;
+font-style: initial;
+font-weight: normal;
+font-size: 14px;
+line-height: 15px;
+text-align: center;
+color: white;
+}
+
+.fourth
+{
+  position: absolute;
+  width: 210px;
+  height: 240px;
+  left:690px ;
+  top: 90px;
+  background: #232853;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.pizza .circle svg.svg-inline--fa{
+  position: absolute;
+  left: 320px;
+  top: 35px;
+  z-index: 1;
+}
+.pizza img
+{
+  position: absolute;
+  top: 87px;
+  left: 735px;
+  z-index: 1;
+}
+.fourth .heading
+{
+  position: absolute;
+  width: 161px;
+  height: 30px;
+  left: 54px;
+  top: 53px;
+line-height: 30px;
+font-family: Roboto;
+font-style: normal;
+font-size: 20px;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.15px;
+}
+.fourth .next
+{
+  position: absolute;
+  width: 70px;
+  height: 30px;
+  left: 112px;
+  top: 10px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 30px;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.15px;
+border:#00ADB8;
+background-color:#00ADB8 ;
+color: white;
+border-radius: 30px;
+}
+.fourth p
+{
+position: absolute;
+width: 170px;
+height: 106px;
+left: 22px;
+top: 95px;
+font-family: Raleway;
+font-style: initial;
+font-weight: normal;
+font-size: 14px;
+line-height: 15px;
+text-align: center;
+color: white;
+}
+
+.infobox .sechead
+{
+  position: absolute;
+  width: 118px;
+  height: 30px;
+  left:30px;
+  top: 350px ;
+  font-style: normal;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.15px;
+  color: #ffffff;
+}
+
+.hack
+{
+  position: absolute;
+  width: 210px;
+  height: 150px;
+  left:30px ;
+  top: 390px;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.432),rgba(0, 0, 0, 0.432) ),url(images/hack.jpg), #000000;
+  border-radius: 20px;
+  background-size: cover;
+  
+}
+a:hover {
+  color: rgb(156, 156, 156);
+  background-color: transparent;
+  text-decoration: underline;
+}
+.hackhead
+{
+  position: absolute;
+  width: 191px;
+  height: 30px;
+  left: 80px;
+  top: 440px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: 0.15px;
+  font-family: Open Sans;
+  font-style: normal;
+  color: #fafafa;
+  z-index: 6;
+}
+
+.comp
+{
+  position: absolute;
+  width: 210px;
+  height: 150px;
+  left:250px ;
+  top: 390px;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.534),rgba(0, 0, 0, 0.534) ),url(images/comp.jpg), #000000;
+  border-radius: 20px;
+  background-size: cover;
+}
+.comphead
+{
+  position: absolute;
+  width: 191px;
+  height: 30px;
+  left: 280px;
+  top: 430px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: 0.15px;
+  font-family: Open Sans;
+  font-style: normal;
+  color: #fafafa;
+  z-index: 6;
+}
+.hire 
+{
+  position: absolute;
+  width: 210px;
+  height: 150px;
+  left:470px ;
+  top: 390px;
+  background:linear-gradient(
+  rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7) ),
+  url(images/hire.jpg), #000000;
+  border-radius: 20px;
+  background-size: cover;
+}
+.hirehead
+{
+  position: absolute;
+  width: 191px;
+  height: 30px;
+  left: 500px;
+  top: 440px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: 0.15px;
+  font-family: Open Sans;
+  font-style: normal;
+  color: #fafafa;
+  z-index: 6;
+}
+.comm
+{
+  position: absolute;
+  width: 210px;
+  height: 150px;
+  left:690px ;
+  top: 390px;
+  background:linear-gradient(
+    rgba(0, 0, 0, 0.51),rgba(0, 0, 0, 0.51) ), url(images/comm.jpg), #000000;
+  border-radius: 20px;
+  background-size: cover;
+}
+.commhead
+{
+  position: absolute;
+  width: 191px;
+  height: 30px;
+  left: 725px;
+  top: 430px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: 0.15px;
+  font-family: Open Sans;
+  font-style: normal;
+  color: #fafafa;
+  z-index: 6;
+}
+
+.basic
+{
+  position: absolute;
+  width: 300px;
+  height: 570px;
+  left: 10px;
+  top: 30px;
+  background-color:linear-gradient(109.58deg, #000000 0%, #0B003E 98.93%) !important ;
+
+}
+.user img
+{
+  position: absolute;
+  top: 120px;
+  width: 30%;
+  size: 49px;
+  left: 140px;
+  right: 120px;
+  top: 90px;
+  border-radius: 50%;
+  
+}
+.basic .name
+{
+  position: absolute;
+  width: 161px;
+  height: 23px;
+  left: 121px;
+  top:189px ;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 30px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.16px;
+  color: #ffffff;
+}
+.basic .prof
+{
+  position: absolute;
+  width: 91px;
+  height: 20px;
+  left: 157px;
+  top: 212px;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 30px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.15px;
+  color: #878787;
+}
+
+
+.dash .btn {
+  color: rgb(250, 248, 248);
+  border-color: rgba(255, 255, 255, 0);
+  
+width: fit-content;
+height: 50px;
+}
+.dash .btn-lg:hover
+{
+  background-color: rgba(128, 128, 128, 0.479);
+  border-color: rgba(128, 128, 128, 0.479);
+  color: white;
+  text-align: justify;
+  min-width: 200px;
+}
+.dash .btn-lg{
+  border-width: medium;
+  border-radius: 0;
+  padding: .6rem 1.3rem;
+font-size: 1.1rem;
+}
+    .dash .btn-lg
+    {
+      position: absolute;
+      top: 255px;
+      left: 85px;
+    }
+
+    .event .btn {
+      color: rgb(250, 248, 248);
+      border-color: rgba(255, 255, 255, 0);
+      
+    width: fit-content;
+    height: 50px;
+    }
+    .event .btn-lg:hover
+    {
+      background-color: rgba(128, 128, 128, 0.479);
+      border-color: rgba(128, 128, 128, 0.479);
+      color: white;
+      text-align: justify;
+      min-width: 200px;
+    }
+    .event .btn-lg{
+      border-width: medium;
+      border-radius: 0;
+      padding: .6rem 1.3rem;
+    font-size: 1.1rem;
+    }
+        .event .btn-lg
+        {
+          position: absolute;
+          top: 315px;
+          left: 85px;
+        }
+
+        .team .btn {
+          color: rgb(250, 248, 248);
+          border-color: rgba(255, 255, 255, 0);
+          
+        width: fit-content;
+        height: 50px;
+        }
+        .team .btn-lg:hover
+        {
+          background-color: rgba(128, 128, 128, 0.479);
+          border-color: rgba(128, 128, 128, 0.479);
+          color: white;
+          text-align: justify;
+          min-width: 200px;
+        }
+        .team .btn-lg{
+          border-width: medium;
+          border-radius: 0;
+          padding: .6rem 1.3rem;
+        font-size: 1.1rem;
+        }
+            .team .btn-lg
+            {
+              position: absolute;
+              top: 370px;
+              left: 80px;
+            }
+
+            .navbarbasic .navbar-expand-md{
+              -ms-flex-flow: column wrap !important;
+              flex-flow: column wrap !important;
+             }
+
+            @media (max-width: 767px) 
+            {
+              
+              input[type=text]
+              {
+                position: absolute;
+                left: 155px;
+                top: 20px;
+              }
+              .navbar-brand img
+              {
+                width: 80%;
+                display: block;
+              }
+              .infobox
+              {
+                position: absolute;
+                left: 13px;
+                top: 78px;
+              
+              }
+              
+              .basic
+              {
+                position: fixed;
+                z-index: 10;
+                background-color: #0B003E;
+                width: 400px;
+                top: 0;
+                left: 0;
+                height:100%;
+                
+              }
+.user img
+{
+  position: absolute;
+  left: 150px;
+  width: 25%;
+  display: block;
+  top: 180px;
+ 
+}
+.basic .name
+{
+  position: absolute;
+  top: 330px;
+  left: 137px;
+}
+.basic .prof
+{
+  position: absolute;
+  top: 300px;
+  left: 173px;
+}
+.navbar-nav .home .svg-inline--fa
+{
+  position: absolute;
+  left: 100px;
+  top: 110px;
+  
+}
+.navbar-nav .bell .svg-inline--fa
+{
+  position: absolute;
+  left: 190px;
+  top: 110px;
+}
+.navbar-nav .sett .svg-inline--fa
+{
+  position: absolute;
+  left: 270px;
+  top: 110px;
+}
+.team .btn-lg
+{
+  position: absolute;
+  top: 500px;
+}
+.event .btn-lg
+{
+  position: absolute;
+  top: 440px;
+}
+.dash .btn-lg
+{
+  position: absolute;
+  top: 380px;
+}
+
+}
+@media (min-width: 768px), all {
+ .navbarbasic .navbar-expand-md .navbar-toggler {
+    display: none;
+  }
+}
