@@ -782,20 +782,20 @@ font-size: 1.1rem;
 {
   position: absolute;
   left: 100px;
-  top: 130px;
+  top: 110px;
   
 }
 .navbar-nav .bell .svg-inline--fa
 {
   position: absolute;
   left: 190px;
-  top: 130px;
+  top: 110px;
 }
 .navbar-nav .sett .svg-inline--fa
 {
   position: absolute;
   left: 270px;
-  top: 130px;
+  top: 110px;
 }
 .team .btn-lg
 {

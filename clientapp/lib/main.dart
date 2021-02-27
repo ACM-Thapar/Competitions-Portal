@@ -1,7 +1,17 @@
+<<<<<<< HEAD
 import 'package:clientapp/event%20details/event_details.dart';
 import 'package:flutter/material.dart';
 import 'login_page.dart';
 
+=======
+import 'package:clientapp/events_page.dart';
+import 'package:flutter/material.dart';
+import 'login_page.dart';
+
+import 'package:clientapp/event%20details/event_details.dart';
+import 'package:flutter/material.dart';
+import 'login_page.dart';
+>>>>>>> upstream/master
 
 void main() {
   runApp(Page());
@@ -12,8 +22,7 @@ class Page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-
-      home: LoginPage(),
+      home: EventDetails(),
     );
   }
 }
