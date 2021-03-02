@@ -16,6 +16,7 @@ img{
     height: 100vh;
 }
  h1{
+    font-family: 'Inter', sans-serif;
     position: absolute;
     width:20.75rem;
     height: 3.625rem;
@@ -32,18 +33,22 @@ img{
     color: #61B6E0;
 }
 ul{
+    font-family: 'Inter', sans-serif;
     position: absolute;
-width: 18.438rem;
+width: 19.438rem;
 height: 10rem;
 left: 4.5rem;
 top: 23.7rem;
 padding-bottom: 0.1rem;
 padding-top: 0.1rem;
 font-weight: 600;
-font-size: 1.375rem;
+font-size: 1.4rem;
 line-height: 2.5rem;
 color: white;
 
+}
+.insta{
+    font-family: 'Inter', sans-serif;
 }
 
 li {
@@ -59,7 +64,7 @@ li {
  }
  .loginBtn{
 background-color:#D33534;
-padding:1rem;
+padding:0.8rem;
 font-size: 1.3rem;
 color:white;
 width: 20rem;
@@ -76,7 +81,27 @@ border-color: #000000;
  .loginBtn i{
      font-size: 1.3rem;
      color:white;
+     padding-left: 0.5rem;
 
+ }
+ .loginBtn p{
+    position: absolute;
+    width: 234px;
+    height: 35px;
+    left: 1000px;
+    top: 449px;
+    
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400px;
+    font-size: 20px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    
+    color: #FFFFFF;
+    
  }
  .col-md-7{
     background: linear-gradient(138.45deg, #000000 0%, #0B003E 100%);
