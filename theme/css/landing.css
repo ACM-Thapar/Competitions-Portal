@@ -15,6 +15,7 @@ img{
 .row{
     height: 100vh;
 }
+
  h1{
     font-family: 'Inter', sans-serif;
     position: absolute;
@@ -67,12 +68,13 @@ background-color:#D33534;
 padding:0.8rem;
 font-size: 1.3rem;
 color:white;
-width: 20rem;
+width: 270px;
 border-color: #000000;
 
  }
   .loginBtn--facebook{
      background-color: #4C4B99;
+    
 
  } 
  .loginBtn--github{
@@ -82,7 +84,7 @@ border-color: #000000;
      font-size: 1.3rem;
      color:white;
      padding-left: 0.5rem;
-
+     
  }
  .loginBtn p{
     position: absolute;
@@ -111,11 +113,11 @@ border-color: #000000;
  }
  h3{
     padding-top:5rem;color: white;
-   
+   font-weight: 400;
  }
  h2{
     padding-top:0.1rem;color: white;
-   
+   font-weight: 400;
  }
  .login{
      padding-left:7rem;
@@ -130,7 +132,7 @@ border-color: #000000;
  @media (max-width: 998px)
  {
      html{
-         font-size: 75%;
+         font-size: 95%;
      }
      
  }
