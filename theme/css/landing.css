@@ -112,15 +112,23 @@ border-color: #000000;
     background: linear-gradient(180deg, #00032D 0%, #000000 53.36%, #00032D 100%); padding-left:10rem;
  }
  h3{
-    padding-top:5rem;color: white;
+    padding-top:2rem;color: white;
    font-weight: 400;
  }
  h2{
     padding-top:0.1rem;color: white;
+    width: 2000px;
+  height: 40px;
+  
+  width: 100%;
+  
+ 
+  white-space: pre;
    font-weight: 400;
  }
  .login{
-     padding-left:7rem;
+     width: 270px;
+     margin:auto;
      padding-bottom:2rem;
      font-family: 'Roboto', sans-serif;
  }
@@ -129,6 +137,7 @@ border-color: #000000;
     line-height: 1.5rem;
     
  }
+ 
  @media (max-width: 998px)
  {
      html{
@@ -140,6 +149,18 @@ border-color: #000000;
  {
      html{
          font-size: 55%;
+     }
+     @media (max-width:883px)
+     {
+         html{
+             font-size: 65%;
+         }
+     }
+     @media (max-width:943px)
+     {
+         html{
+             font-size: 65%;
+         }
      }
      
  }
@@ -156,4 +177,53 @@ border-color: #000000;
          font-size: 82%;
      }
      
+ }
+ @media (max-width: 767px) 
+ {
+     html{
+         text-align: center;
+         font-size: 90%;
+     }
+     .col-md-7
+     {
+         display: none;
+     }
+     .col-md-5{
+ padding-top: 15%;
+     }
+     h3{
+        font-size: 250% !important;
+    }
+    h2{
+       font-size: 200% !important;
+   }
+ }
+ @media (max-width: 667px) 
+ {
+    h2{
+        font-size: 1000px;
+    }
+     html{
+         text-align: center;
+         font-size: 70%;
+     }
+     .col-md-7
+     {
+         display: none;
+     }
+     .col-md-5{
+        padding-top: 5%;
+            }
+     h3{
+         font-size: 250% !important;
+     }
+     h2{
+        font-size: 200% !important;
+    }
+    .loginBtn {
+     font-size: 180% !important;
+    }
+    .loginBtn i{
+        font-size: 100% !important;
+       }
  }
