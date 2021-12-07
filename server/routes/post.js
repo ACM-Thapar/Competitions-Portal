@@ -20,34 +20,10 @@ const postImage = multer({
 
 
 
-router.post('/CreatePost', auth, postImage.array('postImage',3), async (req, res) => {
+router.post('/createpost', auth, postImage.array('postImage',3), async (req, res) => {
 
 
     const imagesArray = []
-
-
-    // const post = new Post({
-        // creatorId : req.session.clientId,
-        // title: req.body.title,
-        // name: req.body.name,
-        // description: req.body.description,
-        // startDate: req.body.startDate,
-        // endDate: req.body.endDate,
-        // posterUrl: req.body.posterUrl,
-        // homepageUrl: req.body.homepageUrl,
-        // registerUrl: req.body.registerUrl,
-        
-    // })
-
-    // try{
-    //     await post.save()
-    //     //const token = await user.generateAuthToken()
-    //     res.status(201).send(post)
-    // }catch(e){
-    //     res.status(400).send(e)
-    // }
-
-
 
     req.files.forEach(element => imagesArray.push(element.buffer))
         const post = new Post({
@@ -64,32 +40,32 @@ router.post('/CreatePost', auth, postImage.array('postImage',3), async (req, res
         })
         try{
             await post.save()
-            res.status(201).send(post)
+            res.status(201).json({success:true , data : post})
         }catch(e){
-            res.status(400).send(e)
+            res.status(400).json({success:false , data : e})
         }
 })
 
 
-router.get('/FetchPosts', async (req, res) => {
+router.get('/fetchposts', async (req, res) => {
 
     try{
         const posts = await Post.find({})
-        res.send(posts)
+        res.status(200).json({success:true , data : posts})
     }catch(e){
-        res.status(400).send(e)
+        res.status(400).json({success:false , data : e})
     }
 })
 
 
-router.post('/UpdatePost', auth, async (req, res) => {
+router.post('/updatepost', auth, async (req, res) => {
     const post = await Post.findOne({_id : req.body.postId})
 
     if(!post){
-        return res.status(400).send("No Such Post")
+        return res.status(400).json({success:false , data : "No Such Post"})
     }
-    if(post.creatorId !== req.session.clientId){
-        return res.status(400).send("Not Your Post")
+    if(post.creatorId.valueOf() !== req.session.clientId){
+        return res.status(400).json({success:false , data : "Not Your Post"})
     }
 
     post.title = req.body.title || post.title
@@ -103,25 +79,23 @@ router.post('/UpdatePost', auth, async (req, res) => {
 
     try{
         const updatedPost = await post.save()
-        res.send("updated")
+        res.status(200).json({success:true , data : "Updated"})
     }catch(e){
-        res.status(400).send(e)
+        res.status(400).json({success:false , data : e})
     }
 
 
 })
 
-router.delete('/DeletePost', auth, async (req, res) => {
+router.delete('/deletepost', auth, async (req, res) => {
 
     const post = await Post.findOne({_id : req.body.postId})
 
     if(!post){
-        return res.status(400).send("No Such Post")
+        return res.status(400).json({success:false , data : "No Such Post"})
     }
-    if(post.creatorId !== req.session.clientId){
-        console.log(post)
-        
-        return res.status(400).send("Not Your Post")
+    if(post.creatorId.valueOf() !== req.session.clientId){
+        return res.status(400).json({success:false , data : "Not Your Post"})
     }
 
     Post.findByIdAndDelete(req.body.postId, function (err, docs) {
@@ -129,8 +103,8 @@ router.delete('/DeletePost', auth, async (req, res) => {
             console.log(err)
         }
         else{
-            res.status(200).send("Post Deleted")
-            console.log("Deleted : ", docs);
+            res.status(200).json({success:true , data : "Post Deleted"})
+           
         }
     });
 
@@ -138,12 +112,12 @@ router.delete('/DeletePost', auth, async (req, res) => {
 })
 
 
-router.get('/userPosts',auth, async (req, res) => {
+router.get('/userposts',auth, async (req, res) => {
     try{
         const posts = await Post.find({creatorId:req.session.clientId})
-        res.send(posts)
+        res.status(200).json({success:true , data : posts})
     }catch(e){
-        res.status(400).send(e)
+        res.status(400).json({success:false , data : e})
     }
 })  
 

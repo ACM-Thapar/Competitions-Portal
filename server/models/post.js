@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 const postSchema = new mongoose.Schema({
     
     creatorId : {
-        type: String,
+        type: mongoose.Types.ObjectId,
         required: true,
     },
     title: {

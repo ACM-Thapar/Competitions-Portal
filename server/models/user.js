@@ -1,4 +1,6 @@
 const mongoose = require('mongoose')
+const bcrypt = require('bcryptjs')
+
 
 
 const userSchema = new mongoose.Schema({
@@ -9,7 +11,6 @@ const userSchema = new mongoose.Schema({
         trim:true,
         unique:true,
         lowercase:true,
-        
     },
     password: {
         type: String,
@@ -17,9 +18,34 @@ const userSchema = new mongoose.Schema({
         trim: true,
         minlength:6
     },
+    profilePic:{
+        type:Buffer,
+        required:true
+    },
+    name: {
+        type: String,
+        required: true,
+    },
+    phoneNo:{
+        type:Number,
+        required: true
+    },
+
    
 
     
+})
+
+
+userSchema.pre('save', async function (next) {
+
+    const user = this
+
+    if(user.isModified('password')){
+        user.password = await bcrypt.hash(user.password,8)
+    }
+    next()
+
 })
 
 
