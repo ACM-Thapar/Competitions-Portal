@@ -4,6 +4,7 @@ const redis = require('redis')
 const connectRedis = require('connect-redis')
 const bcrypt = require('bcryptjs')
 const userRoutes = require('./routes/user')
+const postRoutes = require('./routes/post')
 
 const auth = require('./middleware/auth')
 
@@ -35,6 +36,7 @@ app.use(session({
 }))
 
 app.use(userRoutes)
+app.use(postRoutes)
 
 app.listen(port, ()=>{
     console.log('Server is running on ' + port)
