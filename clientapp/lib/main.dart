@@ -1,3 +1,6 @@
+import 'package:clientapp/events_page.dart';
+import 'package:clientapp/login_page.dart';
+
 import 'portal_page.dart';
 import 'package:flutter/material.dart';
 import 'profile_page.dart';
@@ -15,7 +18,7 @@ class Page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: ProfilePage(),
+      home: EventDetails(),
     );
   }
 }
