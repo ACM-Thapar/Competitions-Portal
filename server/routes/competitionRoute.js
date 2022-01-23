@@ -4,7 +4,7 @@ const Competition = require('../models/competition');
 
 const router = express.Router();
 
-router.get('/', async (req, res) => {
+router.get('/getcompetitions', async (req, res) => {
   try {
     const competitions = await Competition.find({});
     res.status(200).json({ success: true, data: competitions });
