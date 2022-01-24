@@ -1,3 +1,5 @@
+
+
 import 'package:clientapp/events_page.dart';
 import 'package:clientapp/login_page.dart';
 
@@ -18,7 +20,7 @@ class Page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: LoginPage(),
+      home: Eventspage(),
     );
   }
 }
