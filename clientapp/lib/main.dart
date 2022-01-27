@@ -28,7 +28,7 @@ class Page extends StatelessWidget {
       ],
       
       child: MaterialApp(
-        home: EventDetails(),
+        home: Eventspage(),
       ),
     );
   }

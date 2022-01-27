@@ -51,10 +51,14 @@ class Hackathon extends StatelessWidget {
                       ),
                       width: SizeConfig.safeBlockHorizontal * 262,
                       height: SizeConfig.safeBlockVertical * 160,
-                      child: FadeInImage.assetNetwork(
-                        placeholder: 'assets/acm_logo.png',
-                        image: events_list[index].imageURL,
-                        imageScale: 0.5,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(
+                            SizeConfig.safeBlockVertical * 20),
+                        child: FadeInImage.assetNetwork(
+                          placeholder: 'assets/acm_logo.png',
+                          image: events_list[index].imageURL,
+                          fit: BoxFit.fill
+                        ),
                       ),
                     ),
                     SizedBox(
@@ -82,7 +86,8 @@ class Hackathon extends StatelessWidget {
                                 SizedBox(
                                   height: 5,
                                 ),
-                                FittedBox(
+                                Container(
+                                  width: SizeConfig.safeBlockHorizontal*120,
                                   child: Text(events_list[index].organiser,
                                       style: GoogleFonts.nunito(
                                         fontSize:
