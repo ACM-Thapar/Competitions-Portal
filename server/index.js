@@ -92,14 +92,30 @@ async function scrapeData(url,page){
       await page1.goto(compArray[i].link, {waitUntil : 'load', timeout : 0})
       let html = await page1.evaluate(() => document.body.innerHTML)
       let $ = cheerio.load(html)
-
-      const teamSize = $('main > app-public-competition > div > div.page_wrapper.ng-tns-c135-2.with-image > div.section.alt_section.intro.col.p-0.position-relative.scroll-top.tab-infobox.ng-tns-c135-2 > section').children().first().next().next().children().first().children().first().next().next().text()
-      const registerDeadline = $('main > app-public-competition > div > div.page_wrapper.ng-tns-c135-2.with-image > div.section.alt_section.intro.col.p-0.position-relative.scroll-top.tab-infobox.ng-tns-c135-2 > section').children().first().next().next().children().first().children().first().next().next().next().text()
-      const fees = $('main > app-public-competition > div > div.page_wrapper.ng-tns-c135-2.with-image > div.section.alt_section.intro.col.p-0.position-relative.scroll-top.tab-infobox.ng-tns-c135-2 > section').children().first().next().next().children().first().children().first().next().next().next().next().text()
-
-      const timeLeft = $('main > app-public-competition > div > div.page_wrapper.ng-tns-c135-2.with-image > div.section.alt_section.intro.col.p-0.position-relative.scroll-top.tab-infobox.ng-tns-c135-2 > section').children().first().next().next().children().children().first().next().text()
+      const temp = $('main > app-public-competition > div > div.page_wrapper.with-image > div.section.alt_section.intro.col.p-0.position-relative.scroll-top.tab-infobox > section').children().first().next().next().children().first().children('.registered_count').text()
+      let registerDeadline
+      let teamSize
+      let fees
+      let timeLeft
+      if(temp){
+        
+        registerDeadline = $('main > app-public-competition > div > div.page_wrapper.with-image > div.section.alt_section.intro.col.p-0.position-relative.scroll-top.tab-infobox > section').children().first().next().next().children().first().children().first().next().next().next().next().text()
+        teamSize = $('main > app-public-competition > div > div.page_wrapper.ng-tns-c135-2.with-image > div.section.alt_section.intro.col.p-0.position-relative.scroll-top.tab-infobox.ng-tns-c135-2 > section').children().first().next().next().children().first().children().first().next().next().next().text()
+        fees = $('main > app-public-competition > div > div.page_wrapper.ng-tns-c135-2.with-image > div.section.alt_section.intro.col.p-0.position-relative.scroll-top.tab-infobox.ng-tns-c135-2 > section').children().first().next().next().children().first().children().first().next().next().next().next().next().text()
+        timeLeft = $('main > app-public-competition > div > div.page_wrapper.ng-tns-c135-2.with-image > div.section.alt_section.intro.col.p-0.position-relative.scroll-top.tab-infobox.ng-tns-c135-2 > section').children().first().next().next().children().children().first().next().next().text()
+      }else{
+        
+        registerDeadline = $('main > app-public-competition > div > div.page_wrapper.with-image > div.section.alt_section.intro.col.p-0.position-relative.scroll-top.tab-infobox > section').children().first().next().next().children().first().children().first().next().next().next().text()
+        teamSize = $('main > app-public-competition > div > div.page_wrapper.ng-tns-c135-2.with-image > div.section.alt_section.intro.col.p-0.position-relative.scroll-top.tab-infobox.ng-tns-c135-2 > section').children().first().next().next().children().first().children().first().next().next().text()
+        fees = $('main > app-public-competition > div > div.page_wrapper.ng-tns-c135-2.with-image > div.section.alt_section.intro.col.p-0.position-relative.scroll-top.tab-infobox.ng-tns-c135-2 > section').children().first().next().next().children().first().children().first().next().next().next().next().text()
+        timeLeft = $('main > app-public-competition > div > div.page_wrapper.ng-tns-c135-2.with-image > div.section.alt_section.intro.col.p-0.position-relative.scroll-top.tab-infobox.ng-tns-c135-2 > section').children().first().next().next().children().children().first().next().text()
+      }
+      //const teamSize = $('main > app-public-competition > div > div.page_wrapper.ng-tns-c135-2.with-image > div.section.alt_section.intro.col.p-0.position-relative.scroll-top.tab-infobox.ng-tns-c135-2 > section').children().first().next().next().children().first().children().first().next().next().text()
+     // const registerDeadline = $('main > app-public-competition > div > div.page_wrapper.with-image > div.section.alt_section.intro.col.p-0.position-relative.scroll-top.tab-infobox > section').children().first().next().next().children().first().children().first().next().next().next().text()
+      //const fees = $('main > app-public-competition > div > div.page_wrapper.ng-tns-c135-2.with-image > div.section.alt_section.intro.col.p-0.position-relative.scroll-top.tab-infobox.ng-tns-c135-2 > section').children().first().next().next().children().first().children().first().next().next().next().next().text()
+      //const timeLeft = $('main > app-public-competition > div > div.page_wrapper.ng-tns-c135-2.with-image > div.section.alt_section.intro.col.p-0.position-relative.scroll-top.tab-infobox.ng-tns-c135-2 > section').children().first().next().next().children().children().first().next().text()
       const desc = $('#tab-detail').text();
-      //console.log(fees)
+      //console.log(timeLeft)
       compArray[i].fees = fees
       compArray[i].desc = desc
       compArray[i].teamSize = teamSize
@@ -202,7 +218,7 @@ async function getResults(){
   console.log('browser closed')
 }
 
-
+//getResults()
 cron.schedule('* * * * *', () => {
   console.log('running a task every minute');
   getResults()
