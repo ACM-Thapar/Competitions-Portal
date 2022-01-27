@@ -93,9 +93,9 @@ class _EventspageState extends State<Eventspage> {
                       child: TabBarView(
                     physics: NeverScrollableScrollPhysics(),
                     children: [
-                      Hackathon(),
-                      Hackathon(),
-                      Hackathon(),
+                      Hackathon('Hackathon'),
+                      Hackathon('CP'),
+                      Hackathon('ACM Live'),
                     ],
                   ))
                 ],

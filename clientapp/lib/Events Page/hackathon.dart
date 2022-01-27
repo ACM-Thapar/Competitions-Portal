@@ -1,10 +1,15 @@
+import 'package:clientapp/Provider/events_provider.dart';
 import 'package:clientapp/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 class Hackathon extends StatelessWidget {
+  String tag;
+  Hackathon(this.tag);
   @override
   Widget build(BuildContext context) {
+    final events_list = Provider.of<EventsProvider>(context).getEvents(tag);
     return Container(
       margin: EdgeInsets.only(top: SizeConfig.safeBlockVertical * 50),
       width: double.infinity,
@@ -22,7 +27,7 @@ class Hackathon extends StatelessWidget {
       child: Container(
         margin: EdgeInsets.only(top: SizeConfig.safeBlockVertical * 25),
         child: ListView.builder(
-            itemCount: 3,
+            itemCount: events_list.length,
             itemBuilder: (ctx, index) {
               return Container(
                 margin: EdgeInsets.only(
@@ -41,14 +46,19 @@ class Hackathon extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Container(
+                      margin: EdgeInsets.only(
+                        top: SizeConfig.safeBlockVertical * 15,
+                      ),
                       width: SizeConfig.safeBlockHorizontal * 262,
-                      height: SizeConfig.safeBlockVertical * 182,
+                      height: SizeConfig.safeBlockVertical * 160,
                       child: FadeInImage.assetNetwork(
                         placeholder: 'assets/acm_logo.png',
-                        image:
-                            'https://raw.githubusercontent.com/sidB67/Competitions-Portal/master/clientapp/assets/SKILLENZA%20LOGO%201.png?token=GHSAT0AAAAAABK3FXZ2ERF7DOUNT6IMUSUOYPSJ5PA',
+                        image: events_list[index].imageURL,
                         imageScale: 0.5,
                       ),
+                    ),
+                    SizedBox(
+                      height: 10,
                     ),
                     Expanded(
                       child: Row(
@@ -61,7 +71,7 @@ class Hackathon extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 FittedBox(
-                                  child: Text('Hacklipse',
+                                  child: Text(events_list[index].title,
                                       style: GoogleFonts.nunito(
                                         fontSize:
                                             SizeConfig.safeBlockVertical * 24,
@@ -73,7 +83,7 @@ class Hackathon extends StatelessWidget {
                                   height: 5,
                                 ),
                                 FittedBox(
-                                  child: Text('Acm Live Event',
+                                  child: Text(events_list[index].tag,
                                       style: GoogleFonts.nunito(
                                         fontSize:
                                             SizeConfig.safeBlockVertical * 20,
@@ -86,7 +96,7 @@ class Hackathon extends StatelessWidget {
                                   height: 5,
                                 ),
                                 FittedBox(
-                                  child: Text('4 hours left',
+                                  child: Text(events_list[index].time_left,
                                       style: GoogleFonts.nunito(
                                         fontSize:
                                             SizeConfig.safeBlockVertical * 12,
@@ -104,10 +114,9 @@ class Hackathon extends StatelessWidget {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.end,
                               children: [
-                                
-                                
                                 FittedBox(
-                                  child: Text('Prize - Rs. 1000/-',
+                                  child: Text(
+                                    'Prize - Rs. ${events_list[index].prize}/-',
                                       style: GoogleFonts.nunito(
                                         fontSize:
                                             SizeConfig.safeBlockVertical * 18,
@@ -119,7 +128,7 @@ class Hackathon extends StatelessWidget {
                                   height: 5,
                                 ),
                                 FittedBox(
-                                  child: Text('Fees - Rs. 300',
+                                  child: Text('Fees - Rs. ${events_list[index].registration_fee}',
                                       style: GoogleFonts.nunito(
                                         fontSize:
                                             SizeConfig.safeBlockVertical * 12,
@@ -145,7 +154,8 @@ class Hackathon extends StatelessWidget {
                                         child: Text('Apply Now',
                                             style: GoogleFonts.raleway(
                                               fontSize:
-                                                  SizeConfig.safeBlockVertical * 10,
+                                                  SizeConfig.safeBlockVertical *
+                                                      10,
                                               color: Colors.white,
                                               fontWeight: FontWeight.w600,
                                             )),
