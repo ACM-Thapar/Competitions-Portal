@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const competitionSchema = new mongoose.Schema({
-  name: {
+  title: {
     type: String,
     required: true,
   },
@@ -9,42 +9,43 @@ const competitionSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  description: {
-    type: String,
-    required: true,
-  },
-  startDate: {
-    type: String,
-    required: true,
-  },
-  endDate: {
-    type: String,
-    required: true,
-  },
   prize: {
     type: String,
+    
+  },
+  link: {
+    type: String,
     required: true,
+  },
+  fees: {
+    type: String,
+    
+  },
+  desc: {
+    type: String,
+    
   },
   teamSize: {
     type: String,
-    required: true,
+    
   },
-  registrationDeadline: {
+  timeLeft: {
     type: String,
-    required: true,
+    
   },
-  imageUrl: {
+  duration: {
     type: String,
-    required: true,
+    
   },
-  price: {
+  startDate: {
     type: String,
-    required: false,
+    
   },
-  isPaid: {
-    type: Boolean,
-    required: true,
+  compId: {
+    type: String,
+    
   },
+  
 });
 
 const Competition = mongoose.model('Competition', competitionSchema);
