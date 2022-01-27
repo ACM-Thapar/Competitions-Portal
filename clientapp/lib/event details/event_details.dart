@@ -1,537 +1,192 @@
+
+import 'package:clientapp/Model/event.dart';
+import 'package:clientapp/Provider/events_provider.dart';
+import 'package:clientapp/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'RoundedButton.dart';
-import 'package:timeline_tile/timeline_tile.dart';
 
 class EventDetails extends StatelessWidget {
+  final Event event;
+  EventDetails({this.event});
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
+    
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Color(0xff5372E7),
+      appBar: AppBar(
+        backgroundColor: Color(0xff5372E7),
+        centerTitle: true,
+        title: Text(
+          'PORTAL',
+          style: TextStyle(
+            fontFamily: 'Raleway',
+            fontSize: 22.0,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+        leading: IconButton(
+          icon: Icon(FontAwesomeIcons.arrowLeft),
+          iconSize: 20.0,
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+      ),
       body: SafeArea(
         child: Container(
-          child: Stack(
-            alignment: AlignmentDirectional.topCenter,
+          child: Column(
             children: [
               Container(
-                width: double.infinity,
-                child: Image(
-                  fit: BoxFit.fill,
                   width: double.infinity,
-                  height: 200,
-                  image: AssetImage('images/code.png'),
-                ),
-              ),
+                  height: SizeConfig.safeBlockVertical * 200,
+                  child: FadeInImage.assetNetwork(
+                    fit: BoxFit.fill,
+                    placeholder: 'assets/acm_logo.png',
+                    image: event.imageURL,
+                  )),
               Container(
-                margin: EdgeInsets.only(top: 140),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(60.0),
-                    topRight: Radius.circular(60.0),
-                  ),
-                  gradient: LinearGradient(
-                    colors: [
-                      Color(0xff000000),
-                      Color(0xff0B003E),
-                      Color(0xff000000)
-                    ],
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                  ),
-                ),
                 child: Column(
                   children: [
+                    Container(
+                      margin: EdgeInsets.only(
+                          top: 20.0,
+                          left: SizeConfig.safeBlockHorizontal * 20,
+                          right: SizeConfig.safeBlockHorizontal * 15,
+                          bottom: SizeConfig.safeBlockVertical * 30),
+                      child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Flexible(
+                              flex: 1,
+                              child: Text(
+                                'Organizer: ',
+                                style: GoogleFonts.raleway(
+                                  color: Colors.white,
+                                  fontSize:SizeConfig.safeBlockVertical* 22.0,
+                                  fontWeight: FontWeight.w700,
+                                ),
+                              ),
+                            ),
+                            Flexible(
+                              flex: 2,
+                              child: Text(
+                                event.organiser,
+                                style: GoogleFonts.raleway(
+                                  color: Colors.white,
+                                  fontSize: SizeConfig.safeBlockVertical * 16.0,
+                                  fontWeight: FontWeight.w700,
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ),
+                          ]),
+                    ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        Container(
-                          padding: EdgeInsets.fromLTRB(26.0, 25.0, 18.0, 0),
-                          child: Image(
-                            image: AssetImage('images/skillenza.png'),
-                          ),
-                        ),
-                        Expanded(
-                          child: Padding(
-                            padding:
-                                const EdgeInsets.fromLTRB(0, 15.0, 26.0, 0),
-                            child: Column(
-                              children: [
-                                Text(
-                                  'PES Innovation Lab',
-                                  style: GoogleFonts.raleway(
-                                      textStyle: TextStyle(
-                                          color: Colors.white, fontSize: 18.0)),
-                                ),
-                                Text(
-                                  'Hash Code 2020',
-                                  style: GoogleFonts.raleway(
-                                      textStyle: TextStyle(
-                                          color: Colors.white, fontSize: 18.0)),
-                                ),
-                                SizedBox(height: 7.0),
-                                Text(
-                                  'PES University (PESU), Bengaluru',
-                                  style: GoogleFonts.raleway(
-                                      textStyle: TextStyle(
-                                        color: Color(0xff678ef3),
-                                      ),
-                                      fontSize: 12.0),
-                                ),
-                              ],
+                        Column(
+                          children: [
+                            Text(
+                              'Registration Fees',
+                              style: GoogleFonts.raleway(
+                                color: Colors.white,
+                                fontSize: SizeConfig.safeBlockVertical*15.0,
+                                fontWeight: FontWeight.w700,
+                              ),
                             ),
-                          ),
+                            SizedBox(height: 10),
+                            Text(
+                              'Rs. ${event.registration_fee}',
+                              style: GoogleFonts.raleway(
+                                color: Colors.white,
+                                fontSize:SizeConfig.safeBlockVertical* 14.0,
+                              ),
+                            ),
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            Text(
+                              'Team Size',
+                              style: GoogleFonts.raleway(
+                                color: Colors.white,
+                                fontSize:SizeConfig.safeBlockVertical* 15.0,
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
+                            SizedBox(height: 10),
+                            Text(
+                              '${event.team_size} Members',
+                              style: GoogleFonts.raleway(
+                                color: Colors.white,
+                                fontSize:SizeConfig.safeBlockVertical* 14.0,
+                              ),
+                            ),
+                          ],
                         ),
                       ],
                     ),
-                    SizedBox(height: 15),
-                    Expanded(
-                      child: SingleChildScrollView(
-                        child: Container(
-                          padding: EdgeInsets.only(top: 37.11),
-                          child: Column(
-                            children: [
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceAround,
-                                children: [
-                                  Column(
-                                    children: [
-                                      Text(
-                                        'Registration Fees',
-                                        style: GoogleFonts.raleway(
-                                          color: Colors.white,
-                                          fontSize: 13.0,
-                                          fontWeight: FontWeight.w700,
-                                        ),
-                                      ),
-                                      SizedBox(height: 10),
-                                      Text(
-                                        '1000',
-                                        style: GoogleFonts.raleway(
-                                          color: Colors.white,
-                                          fontSize: 12.0,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  Column(
-                                    children: [
-                                      Text(
-                                        'Team Size',
-                                        style: GoogleFonts.raleway(
-                                          color: Colors.white,
-                                          fontSize: 13.0,
-                                          fontWeight: FontWeight.w700,
-                                        ),
-                                      ),
-                                      SizedBox(height: 10),
-                                      Text(
-                                        '3-5 Members',
-                                        style: GoogleFonts.raleway(
-                                          color: Colors.white,
-                                          fontSize: 12.0,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.fromLTRB(26, 34, 26, 0),
-                                child: Container(
-                                  width: 308,
-                                  height: 21,
-                                  child: Center(
-                                    child: Text(
-                                      'EVENT DESCRIPTION',
-                                      style: GoogleFonts.raleway(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.w700,
-                                        fontSize: 18.0,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.fromLTRB(26, 15, 26, 0),
-                                child: Container(
-                                  width: 308,
-                                  height: 90,
-                                  child: Center(
-                                    child: Text(
-                                      'Haclipse is a full-fledged virtual 24-hour hackathon for college students organized by ACM TIET. Haclipse is a full-fledged virtual 24-hour hackathon for college students organized by ACM TIET. Haclipse is a full-fledged virtual 24-hour hackathon for college students organized by ACM TIET. ',
-                                      textAlign: TextAlign.center,
-                                      style: GoogleFonts.raleway(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.w400,
-                                        fontSize: 10.0,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.fromLTRB(26, 34, 26, 0),
-                                child: Container(
-                                  width: 308,
-                                  height: 42,
-                                  child: Center(
-                                    child: Text(
-                                      'LAST DATE TO REGISTER \n January 20 ,2021',
-                                      textAlign: TextAlign.center,
-                                      style: GoogleFonts.raleway(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.w700,
-                                        fontSize: 18.0,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              SizedBox(height: 25.0),
-                              RoundedButton(
-                                onPressed: () {},
-                                colour: Color(0xffFD367E),
-                                title: 'Register Now',
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.fromLTRB(26.05, 34, 22, 0),
-                                child: Container(
-                                  width: 311.95,
-                                  height: 21,
-                                  child: Center(
-                                    child: Text(
-                                      'TIMELINE',
-                                      style: GoogleFonts.raleway(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.w700,
-                                          fontSize: 18),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              TimelineTile(
-                                lineXY: .5,
-                                afterLineStyle: LineStyle(
-                                    color: Colors.white, thickness: 1),
-                                alignment: TimelineAlign.center,
-                                isFirst: true,
-                                indicatorStyle: IndicatorStyle(
-                                  width: 35.45,
-                                  height: 35,
-                                  indicator: Container(
-                                    decoration: BoxDecoration(
-                                      border: Border.all(
-                                        color: Colors.white,
-                                        width: 1,
-                                      ),
-                                      shape: BoxShape.circle,
-                                    ),
-                                    child: Center(
-                                      child: Icon(
-                                        FontAwesomeIcons.edit,
-                                        color: Colors.white,
-                                        size: 15,
-                                      ),
-                                    ),
-                                  ),
-                                  indicatorXY: 0,
-                                  padding: const EdgeInsets.only(top: 21),
-                                ),
-                                endChild: Padding(
-                                  padding: const EdgeInsets.only(top: 25),
-                                  child: Column(
-                                    children: [
-                                      Text(
-                                        'Registration'.toUpperCase(),
-                                        style: GoogleFonts.roboto(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.w500,
-                                          fontSize: 12,
-                                        ),
-                                      ),
-                                      Container(
-                                        padding: EdgeInsets.only(top: 8),
-                                        child: Text(
-                                          'December 29,2020'.toUpperCase(),
-                                          style: GoogleFonts.roboto(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.w400,
-                                            fontSize: 10,
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              TimelineTile(
-                                lineXY: 0,
-                                beforeLineStyle: LineStyle(
-                                    color: Colors.white, thickness: 1),
-                                afterLineStyle: LineStyle(
-                                    color: Colors.white, thickness: 1),
-                                alignment: TimelineAlign.center,
-                                indicatorStyle: IndicatorStyle(
-                                  indicatorXY: 0,
-                                  width: 35.45,
-                                  height: 35,
-                                  drawGap: true,
-                                  indicator: Container(
-                                    decoration: BoxDecoration(
-                                      border: Border.all(
-                                          color: Colors.white, width: 1),
-                                      shape: BoxShape.circle,
-                                    ),
-                                    child: Icon(
-                                      FontAwesomeIcons.cut,
-                                      size: 15,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                ),
-                                startChild: Column(
-                                  children: [
-                                    Text(
-                                      'Inaugration'.toUpperCase(),
-                                      style: GoogleFonts.roboto(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.w500,
-                                        fontSize: 12,
-                                      ),
-                                    ),
-                                    Container(
-                                      width: 93,
-                                      padding: EdgeInsets.only(top: 8),
-                                      child: Text(
-                                        'December 29,2020 10 AM'.toUpperCase(),
-                                        textAlign: TextAlign.center,
-                                        style: GoogleFonts.roboto(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.w400,
-                                          fontSize: 10,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              TimelineTile(
-                                beforeLineStyle: LineStyle(
-                                    color: Colors.white, thickness: 1),
-                                afterLineStyle: LineStyle(
-                                    color: Colors.white, thickness: 1),
-                                alignment: TimelineAlign.center,
-                                indicatorStyle: IndicatorStyle(
-                                  indicatorXY: 0,
-                                  width: 35.45,
-                                  height: 35,
-                                  drawGap: true,
-                                  indicator: Container(
-                                    decoration: BoxDecoration(
-                                      border: Border.all(
-                                          color: Colors.white, width: 1),
-                                      shape: BoxShape.circle,
-                                    ),
-                                    child: Icon(
-                                      FontAwesomeIcons.lightbulb,
-                                      size: 15,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                ),
-                                endChild: Column(
-                                  children: [
-                                    Text(
-                                      'IDEATION & CREATION'.toUpperCase(),
-                                      style: GoogleFonts.roboto(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.w500,
-                                        fontSize: 12,
-                                      ),
-                                    ),
-                                    Container(
-                                      padding: EdgeInsets.only(top: 8),
-                                      width: 124,
-                                      child: Text(
-                                        'DECEMBER 29 ,2020 - DECEMBER 30 ,2020'
-                                            .toUpperCase(),
-                                        textAlign: TextAlign.center,
-                                        style: GoogleFonts.roboto(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.w400,
-                                          fontSize: 10,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              TimelineTile(
-                                beforeLineStyle: LineStyle(
-                                    color: Colors.white, thickness: 1),
-                                afterLineStyle: LineStyle(
-                                    color: Colors.white, thickness: 1),
-                                alignment: TimelineAlign.center,
-                                indicatorStyle: IndicatorStyle(
-                                  indicatorXY: 0,
-                                  width: 35.45,
-                                  height: 35,
-                                  drawGap: true,
-                                  indicator: Container(
-                                    decoration: BoxDecoration(
-                                      border: Border.all(
-                                          color: Colors.white, width: 1),
-                                      shape: BoxShape.circle,
-                                    ),
-                                    child: Icon(
-                                      FontAwesomeIcons.clock,
-                                      size: 15,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                ),
-                                startChild: Column(
-                                  children: [
-                                    Text(
-                                      'SUBMISSION DEADLINE'.toUpperCase(),
-                                      style: GoogleFonts.roboto(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.w500,
-                                        fontSize: 12,
-                                      ),
-                                    ),
-                                    Container(
-                                      padding: EdgeInsets.only(top: 8),
-                                      width: 80,
-                                      child: Text(
-                                        'JANUARY 1 ,2021 10 AM'.toUpperCase(),
-                                        textAlign: TextAlign.center,
-                                        style: GoogleFonts.roboto(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.w400,
-                                          fontSize: 10,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              TimelineTile(
-                                beforeLineStyle: LineStyle(
-                                    color: Colors.white, thickness: 1),
-                                afterLineStyle: LineStyle(
-                                    color: Colors.white, thickness: 1),
-                                alignment: TimelineAlign.center,
-                                indicatorStyle: IndicatorStyle(
-                                  indicatorXY: 0,
-                                  width: 35.45,
-                                  height: 35,
-                                  drawGap: true,
-                                  indicator: Container(
-                                    decoration: BoxDecoration(
-                                      border: Border.all(
-                                          color: Colors.white, width: 1),
-                                      shape: BoxShape.circle,
-                                    ),
-                                    child: Icon(
-                                      FontAwesomeIcons.starHalfAlt,
-                                      size: 15,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                ),
-                                endChild: Column(
-                                  children: [
-                                    Container(
-                                      width: 126,
-                                      child: Text(
-                                        'JUDGING & PRESENTATION'.toUpperCase(),
-                                        textAlign: TextAlign.center,
-                                        style: GoogleFonts.roboto(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.w500,
-                                          fontSize: 12,
-                                        ),
-                                      ),
-                                    ),
-                                    Container(
-                                      padding: EdgeInsets.only(top: 8),
-                                      width: 124,
-                                      child: Text(
-                                        'JANUARY 4 ,2021'.toUpperCase(),
-                                        textAlign: TextAlign.center,
-                                        style: GoogleFonts.roboto(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.w400,
-                                          fontSize: 10,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              TimelineTile(
-                                isLast: true,
-                                beforeLineStyle: LineStyle(
-                                    color: Colors.white, thickness: 1),
-                                afterLineStyle: LineStyle(
-                                    color: Colors.white, thickness: 1),
-                                alignment: TimelineAlign.center,
-                                indicatorStyle: IndicatorStyle(
-                                  indicatorXY: 0,
-                                  width: 35.45,
-                                  height: 35,
-                                  drawGap: true,
-                                  indicator: Container(
-                                    decoration: BoxDecoration(
-                                      border: Border.all(
-                                          color: Colors.white, width: 1),
-                                      shape: BoxShape.circle,
-                                    ),
-                                    child: Icon(
-                                      FontAwesomeIcons.trophy,
-                                      size: 15,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                ),
-                                startChild: Column(
-                                  children: [
-                                    Text(
-                                      'RESULTS'.toUpperCase(),
-                                      style: GoogleFonts.roboto(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.w500,
-                                        fontSize: 12,
-                                      ),
-                                    ),
-                                    Container(
-                                      padding: EdgeInsets.only(top: 8),
-                                      width: 80,
-                                      child: Text(
-                                        'JANUARY 5 ,2021 5 PM'.toUpperCase(),
-                                        textAlign: TextAlign.center,
-                                        style: GoogleFonts.roboto(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.w400,
-                                          fontSize: 10,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
+                    Container(
+                      margin: EdgeInsets.only(
+                          top: SizeConfig.safeBlockVertical * 25),
+                      width: SizeConfig.safeBlockHorizontal * 308,
+                      height: SizeConfig.safeBlockVertical * 25,
+                      child: Center(
+                        child: Text(
+                          'EVENT DESCRIPTION',
+                          style: GoogleFonts.raleway(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w700,
+                            fontSize: SizeConfig.safeBlockVertical * 24.0,
                           ),
                         ),
                       ),
+                    ),
+                    Container(
+                      width: SizeConfig.safeBlockHorizontal * 308,
+                      height: SizeConfig.safeBlockVertical * 148,
+                      child: Center(
+                        child: Text(
+                          event.description,
+                          maxLines: 7,
+                          textAlign: TextAlign.center,
+                          style: GoogleFonts.raleway(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w400,
+                              fontSize: SizeConfig.safeBlockVertical * 18),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      width: SizeConfig.safeBlockHorizontal*308,
+                      height: SizeConfig.safeBlockVertical * 50,
+                      child: Center(
+                        child: FittedBox(
+                          child: Text(
+                            'LAST DATE TO REGISTER \n ${event.date}',
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.raleway(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w700,
+                              fontSize: SizeConfig.safeBlockVertical*18.0,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(
+                          top: SizeConfig.safeBlockVertical * 10,
+                          bottom: SizeConfig.safeBlockVertical * 10),
+                      child: RoundedButton(
+                                  onPressed: () {},
+                                  colour: Color(0xffFD367E),
+                                  title: 'Register Now',
+                                ),
                     ),
                   ],
                 ),
