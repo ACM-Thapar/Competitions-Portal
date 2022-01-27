@@ -1,3 +1,4 @@
+
 import 'package:clientapp/Model/event.dart';
 import 'package:clientapp/Provider/events_provider.dart';
 import 'package:clientapp/size_config.dart';
@@ -6,15 +7,14 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'RoundedButton.dart';
-import 'package:timeline_tile/timeline_tile.dart';
 
 class EventDetails extends StatelessWidget {
-  // final Event event;
-  // EventDetails({this.event});
+  final Event event;
+  EventDetails({this.event});
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-    final event = Provider.of<EventsProvider>(context).getEvents('CP')[0];
+    
     return Scaffold(
       backgroundColor: Color(0xff5372E7),
       appBar: AppBar(
@@ -54,21 +54,25 @@ class EventDetails extends StatelessWidget {
                     Container(
                       margin: EdgeInsets.only(
                           top: 20.0,
-                          left: SizeConfig.safeBlockHorizontal * 30,
-                          right: SizeConfig.safeBlockHorizontal * 25,
+                          left: SizeConfig.safeBlockHorizontal * 20,
+                          right: SizeConfig.safeBlockHorizontal * 15,
                           bottom: SizeConfig.safeBlockVertical * 30),
                       child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
-                            Text(
-                              'Organizer: ',
-                              style: GoogleFonts.raleway(
-                                color: Colors.white,
-                                fontSize:SizeConfig.safeBlockVertical* 22.0,
-                                fontWeight: FontWeight.w700,
+                            Flexible(
+                              flex: 1,
+                              child: Text(
+                                'Organizer: ',
+                                style: GoogleFonts.raleway(
+                                  color: Colors.white,
+                                  fontSize:SizeConfig.safeBlockVertical* 22.0,
+                                  fontWeight: FontWeight.w700,
+                                ),
                               ),
                             ),
-                            Expanded(
+                            Flexible(
+                              flex: 2,
                               child: Text(
                                 event.organiser,
                                 style: GoogleFonts.raleway(

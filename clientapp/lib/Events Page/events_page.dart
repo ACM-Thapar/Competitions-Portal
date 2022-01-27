@@ -1,12 +1,10 @@
 import 'dart:ui';
 import 'package:clientapp/Events%20Page/hackathon.dart';
-import 'package:clientapp/components/event_tile_live.dart';
-import 'package:clientapp/components/event_tile_upcoming.dart';
+
 import 'package:clientapp/size_config.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../components/event_tile_past.dart';
-import 'package:clientapp/components/button.dart';
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 

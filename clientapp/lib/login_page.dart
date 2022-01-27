@@ -1,3 +1,4 @@
+import 'package:clientapp/routers/routenames.dart';
 import 'package:clientapp/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -151,7 +152,9 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                         ),
                         GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.pushNamed(context, RouteNames.events);
+                          },
                           child: Container(
                             height: SizeConfig.safeBlockVertical * 52,
                             width: SizeConfig.safeBlockHorizontal * 295,

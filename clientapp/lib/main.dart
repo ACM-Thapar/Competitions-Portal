@@ -1,17 +1,12 @@
-
-
 import 'package:clientapp/Events%20Page/events_page.dart';
-import 'package:clientapp/login_page.dart';
+import 'package:clientapp/routers/approutes.dart';
+import 'package:clientapp/routers/routenames.dart';
+
 import 'package:provider/provider.dart';
 
 import 'Provider/events_provider.dart';
-import 'portal_page.dart';
+
 import 'package:flutter/material.dart';
-import 'profile_page.dart';
-
-import 'package:clientapp/event%20details/event_details.dart';
-
-
 
 void main() {
   runApp(Page());
@@ -26,9 +21,10 @@ class Page extends StatelessWidget {
         // ChangeNotifierProvider(create: (context) => AuthProvider()),
         ChangeNotifierProvider(create: (context) => EventsProvider()),
       ],
-      
       child: MaterialApp(
-        home: Eventspage(),
+        onGenerateRoute: AppRoutes.onGenerateRoute ,
+        initialRoute: RouteNames.login,
+        
       ),
     );
   }
