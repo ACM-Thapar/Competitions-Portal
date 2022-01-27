@@ -1,6 +1,7 @@
 class Event {
   String title;
   String tag;
+  String organiser;
   String description;
   String date;
   int team_size;
@@ -17,5 +18,6 @@ class Event {
       this.prize,
       this.registration_fee,
       this.imageURL,
+      this.organiser,
       this.time_left});
 }

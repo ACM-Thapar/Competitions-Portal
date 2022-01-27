@@ -83,14 +83,16 @@ class Hackathon extends StatelessWidget {
                                   height: 5,
                                 ),
                                 FittedBox(
-                                  child: Text(events_list[index].tag,
+                                  child: Text(events_list[index].organiser,
                                       style: GoogleFonts.nunito(
                                         fontSize:
-                                            SizeConfig.safeBlockVertical * 20,
+                                            SizeConfig.safeBlockVertical * 14,
                                         color:
                                             Color(0xff848484).withOpacity(.6),
                                         fontWeight: FontWeight.w800,
-                                      )),
+                                      ),
+                                      overflow: TextOverflow.ellipsis
+                                      ),
                                 ),
                                 SizedBox(
                                   height: 5,

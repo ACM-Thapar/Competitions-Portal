@@ -15,6 +15,7 @@ class EventsProvider with ChangeNotifier {
       registration_fee: 100,
       time_left: '4 hours',
       team_size: 3,
+      organiser: 'University of Delhi',
     ),
     Event(
       tag: 'Hackathon',
@@ -28,6 +29,7 @@ class EventsProvider with ChangeNotifier {
       registration_fee: 100,
       time_left: '4 hours',
       team_size: 3,
+      organiser: 'University of Delhi',
     ),
     Event(
       tag: 'CP',
@@ -41,6 +43,7 @@ class EventsProvider with ChangeNotifier {
       registration_fee: 100,
       time_left: '4 hours',
       team_size: 3,
+      organiser: 'Deen Dayal Upadhaya College (DDUC), University of Delhi (DU), New Delhi'
     ),
       Event(
       tag: 'CP',
@@ -54,6 +57,7 @@ class EventsProvider with ChangeNotifier {
       registration_fee: 100,
       time_left: '4 hours',
       team_size: 3,
+      organiser: 'Indian Institute of Technology (IIT), Guwahati'
     ),
     
       Event(
@@ -68,6 +72,7 @@ class EventsProvider with ChangeNotifier {
       registration_fee: 100,
       time_left: '4 hours',
       team_size: 3,
+      organiser: 'Deen Dayal Upadhaya College (DDUC), University of Delhi (DU), New Delhi'
     ),
       Event(
       tag: 'ACM Live',
@@ -81,6 +86,7 @@ class EventsProvider with ChangeNotifier {
       registration_fee: 100,
       time_left: '4 hours',
       team_size: 3,
+      organiser: 'Deen Dayal Upadhaya College (DDUC), University of Delhi (DU), New Delhi'
     ),
   ];
 
