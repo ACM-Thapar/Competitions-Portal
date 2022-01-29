@@ -24,7 +24,7 @@ class _EventspageState extends State<Eventspage> {
         length: 3,
         child: Scaffold(
             appBar: AppBar(
-              backgroundColor: Color(0xff5372E7),
+              backgroundColor: Color(0xff0075FF),
               title: Center(
                 child: Text(
                   'PORTAL',
