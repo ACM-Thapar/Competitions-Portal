@@ -84,7 +84,7 @@ label{
   line-height: 24px;  
 }  
 
-#Uname{  
+form input{ 
   width: 750.34px;  
   height: 66.31px;  
   border: 1px solid #4285F4; 
@@ -92,15 +92,7 @@ label{
   background: #FFFFFF;
   font-size: 14px;    
 }  
-#Pass{  
-  width: 750.34px;  
-  height: 66.31px;  
-  border: 1px solid #4285F4; 
-  border-radius: 9px;
-  background: #FFFFFF;
-  font-size: 14px;  
-    
-}  
+
 #log{  
   width: 524.66px;  
   height: 62.82px;   
