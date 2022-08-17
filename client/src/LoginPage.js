@@ -22,18 +22,25 @@ function LoginPage(props) {
           <h3>Sign in</h3>
           <Form className="login" method='get' action='login.php'>
             
-              <label>Enter your username or email address</label>
-              <input name="Uname" id='Uname' placeholder='    Username or email address'/>
-              {touched.email && errors.email && <span className="help-block text-danger">{errors.email}</span>}
-              <br></br>
-              <br></br>
+            <label>Enter your username or email address</label>
+            <br></br>
+            <br></br>
+            <div className="form-group">
+              <Field type="text" name="email" className={"form-control"} placeholder="Username or email address" />
+              { touched.email && errors.email && <span className="help-block text-danger">{errors.email}</span> }
+            <br></br>
+            </div>
+            <div className="form-group">
               <label>Enter your password</label>
-              <input name="Pass" id='Pass' placeholder='    Password'/>
-              {touched.password && errors.password && <span className="help-block text-danger">{errors.password}</span>}
               <br></br>
               <br></br>
-              <br></br>
-              <input type="button" name="log" id="log" value="Sign up"/>
+              <Field type="password" name="password" className={"form-control"} placeholder="Password" />
+              { touched.password && errors.password && <span className="help-block text-danger">{errors.password}</span> }
+            </div>             
+            <br></br>
+            <br></br>
+            <br></br>
+            <input type="button" name="log" id="log" value="Sign up"/>
           </Form>
         </div>
       </div>
